@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+/* =====================================================================
+   EDIT YOUR BUSINESS DETAILS HERE
+   Change the values in quotes, save the file and refresh the browser.
+   Name, phone, WhatsApp, address, hours and colours update everywhere
+   on the page. Full guide: README.md
+   ===================================================================== */
+window.SITE = {
+  name: "Kattera Hair Studio",
+  logoMain: "KATTERA",                        // big word in the logo
+  logoAccent: "HAIR",                         // coloured word in the logo
+  owner: "by Ravi Varma",                     // small line next to the logo (can be "")
+  phone: "+919848011223",                     // for tap-to-call: + country code, no spaces
+  phoneDisplay: "+91 98480 11223",            // how the number is printed on the page
+  whatsapp: "919848011223",                   // country code + number, digits only
+  whatsappMessage: "Hi Kattera Hair Studio, I would like to book a haircut.",
+  email: "studio@katterahair.in",
+  kicker: "Haircut studio · Madhapur, Hyderabad",   // small line above the headline
+  address: ["Plot 44, Jubilee Enclave", "Madhapur, Hyderabad 500081"],
+  mapsQuery: "Kattera Hair Studio, Madhapur, Hyderabad",
+  ratingScore: "4.9",                         // only show real numbers from your Google profile
+  ratingCount: "418",
+  timezone: "Asia/Kolkata",
+  /* Opening hours, 24-hour clock. [] means closed. */
+  hours: {
+    mon: [],
+    tue: [["10:00", "20:00"]],
+    wed: [["10:00", "20:00"]],
+    thu: [["11:00", "21:30"]],
+    fri: [["10:00", "20:00"]],
+    sat: [["09:30", "20:00"]],
+    sun: [["09:30", "18:00"]]
+  },
+  /* Brand colour. One accent, used for buttons and highlights (works in light and dark mode). */
+  colors: {
+    orange: "#ff8c00"
+  },
+  /* true = call and WhatsApp buttons show a preview message instead of
+     dialling. Set to false before you publish the site. */
+  demoMode: true
+};
+(function (c) { var r = document.documentElement.style; for (var k in c) r.setProperty("--" + k, c[k]); })(window.SITE.colors);
+</script>
+<!-- EDIT: the page title and description Google shows in search results -->
+<title>Kattera Hair Studio | Precision Haircuts in Madhapur, Hyderabad</title>
+<meta name="description" content="Scissor haircuts that fall back into place on their own, no blow-dry needed. Cuts for women, men and kids, colour and hair care. Book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<style>
+/* One accent, sharp corners everywhere. */
+:root{
+ --bg:#f4f4f2;--surface:#ffffff;--ink:#141414;--mute:#5b5b58;--line:#d9d9d4;
+ --orange:#ff8c00;--orange-ink:#a65200;--on-orange:#141414;
+ --font:"Archivo",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+ :root{--bg:#121212;--surface:#1b1b1b;--ink:#efefec;--mute:#a3a39e;--line:#2e2e2c;--orange-ink:#ffa53d;--on-orange:#141414}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--font);font-stretch:100%;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+::selection{background:var(--orange);color:var(--on-orange)}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+html.js .rv{opacity:0;transform:translateY(28px)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.mark{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap}
+.mark b{font:800 21px/1 var(--font);font-stretch:125%;letter-spacing:-.01em}
+.mark b i{font-style:normal;color:var(--orange-ink)}
+.mark small{font:500 12px var(--font);color:var(--mute);letter-spacing:.04em}
+nav ul{display:flex;gap:24px;list-style:none;margin-left:auto;font-size:15px}
+nav ul a{text-decoration:none;color:var(--mute);transition:color .2s}
+nav ul a:hover{color:var(--ink)}
+.now{display:flex;align-items:center;gap:8px;font:600 13.5px var(--font);white-space:nowrap}
+.now i{width:8px;height:8px;background:var(--mute);flex:none}
+.now.on i{background:#21a35b}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;padding:0 24px;border:0;background:var(--orange);color:var(--on-orange);font:700 15px var(--font);text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .18s ease,background .2s}
+.btn:hover{filter:brightness(1.08)}.btn:active{transform:translateY(1px) scale(.985)}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--bg);filter:none}
+.btn.sm{height:40px;padding:0 18px;font-size:14px}
+.hero{padding:56px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end}
+.kicker{font:600 13px var(--font);letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink)}
+h1{font:800 clamp(44px,6.2vw,92px)/1.04 var(--font);font-stretch:112%;letter-spacing:-.035em;margin:20px 0 24px}
+h1 em{font-style:italic;font-weight:300;font-stretch:100%;color:var(--orange-ink);display:inline-block;padding-bottom:.08em}
+h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}
+h1 .w>span{display:inline-block}
+.lede{font-size:19px;color:var(--mute);max-width:32em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.shot .frame{overflow:hidden;aspect-ratio:4/5;background:var(--line)}
+.shot img{width:100%;height:112%;object-fit:cover;object-position:35% 50%;max-width:none}
+.proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.proof div{padding:30px 24px 30px 0}
+.proof div+div{padding-left:24px;border-left:1px solid var(--line)}
+.proof strong{display:block;font:800 clamp(34px,4vw,52px)/1 var(--font);font-stretch:118%;letter-spacing:-.03em}
+.proof strong sup{font-size:.42em;vertical-align:top;margin-left:2px;color:var(--orange-ink)}
+.proof div>span{display:block;margin-top:8px;font-size:14px;color:var(--mute);max-width:18em}
+section{padding:112px 0}
+h2{font:800 clamp(34px,4.6vw,64px)/1.06 var(--font);font-stretch:110%;letter-spacing:-.03em;max-width:15ch}
+h2 em{font-style:italic;font-weight:300;font-stretch:100%;color:var(--orange-ink);display:inline-block;padding-bottom:.06em}
+.body{color:var(--mute);max-width:56ch;margin-top:20px}
+.manifesto h2{max-width:none;font-size:clamp(40px,6.4vw,96px)}
+.lineage{position:relative;margin-top:72px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.lineage svg{position:absolute;left:0;top:7px;width:100%;height:20px;overflow:visible}
+.lineage svg path{fill:none;stroke:var(--orange);stroke-width:2}
+.lineage li{list-style:none;position:relative;padding-top:44px}
+.lineage li::before{content:"";position:absolute;top:0;left:0;width:16px;height:16px;background:var(--bg);border:2px solid var(--ink)}
+.lineage li:last-child::before{background:var(--orange);border-color:var(--orange)}
+.lineage b{display:block;font:700 20px/1.2 var(--font);font-stretch:108%}
+.lineage small{display:block;font:600 13px var(--font);color:var(--orange-ink);margin:6px 0 8px;letter-spacing:.02em}
+.lineage p{font-size:15px;color:var(--mute)}
+.concept .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:start}
+.concept .pic{position:sticky;top:96px}
+.concept .pic img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.principles{margin-top:40px}
+.principle{padding:30px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:150px 1fr;gap:24px}
+.principle h3{font:700 15px/1.3 var(--font);text-transform:uppercase;letter-spacing:.08em;color:var(--orange-ink);padding-top:5px}
+.principle p{font-size:20px;line-height:1.45}
+.principle p span{display:block;font-size:15px;color:var(--mute);margin-top:8px;line-height:1.55}
+.rdv{background:var(--surface);overflow:hidden}
+.rdv-head p{color:var(--mute);max-width:52ch;margin-top:20px}
+.track-wrap{margin-top:56px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.track-wrap::-webkit-scrollbar{display:none}
+.track{display:flex;gap:20px;width:max-content;padding-right:16px}
+.moment{scroll-snap-align:start;width:min(420px,82vw);flex:none;border:1px solid var(--line);background:var(--bg);display:flex;flex-direction:column}
+.moment .ph{aspect-ratio:3/2;overflow:hidden;background:var(--line)}
+.moment .ph img{width:100%;height:100%;object-fit:cover}
+.moment .tx{padding:26px 26px 30px}
+.moment h3{font:800 26px/1.15 var(--font);font-stretch:110%;letter-spacing:-.02em;margin-bottom:10px}
+.moment p{color:var(--mute);font-size:16px}
+.moment.accent{background:var(--orange);color:var(--on-orange);border-color:var(--orange);justify-content:flex-end}
+.moment.accent p{color:#3a2400}
+.hint{margin-top:16px;font-size:13px;color:var(--mute)}
+.team-grid{margin-top:56px;display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:20px}
+.person{position:relative;padding:34px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;justify-content:flex-end;min-height:280px;overflow:hidden}
+.person .mono{font:900 120px/0.8 var(--font);font-stretch:125%;letter-spacing:-.05em;color:var(--line);position:absolute;top:22px;right:24px;pointer-events:none}
+.person h3{font:800 34px/1.05 var(--font);font-stretch:112%;letter-spacing:-.025em;position:relative}
+.person .role{font:600 13px var(--font);letter-spacing:.06em;text-transform:uppercase;margin:6px 0 14px;color:var(--orange-ink);position:relative}
+.person p{color:var(--mute);max-width:44ch;position:relative}
+.person.lead{grid-row:span 2;background:var(--orange);border-color:var(--orange);color:var(--on-orange);min-height:560px}
+.person.lead .mono{color:rgba(20,20,20,.12);font-size:200px}
+.person.lead .role{color:#141414}
+.person.lead p{color:#2b1a00;font-size:18px}
+.person.photo{color:#f4f4f2;border:0}
+.person.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.2)}
+.person.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,20,.15),rgba(20,20,20,.86))}
+.person.photo>*:not(img){z-index:1}
+.person.photo .role{color:#ffb35c}
+.person.photo p{color:#dedcd6}
+.person.photo .mono{color:rgba(244,244,242,.12)}
+.tarifs .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);padding:28px}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.seg button{height:40px;padding:0 16px;border:1.5px solid var(--line);background:transparent;color:var(--ink);font:600 14px var(--font);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.seg button[aria-selected="true"],.seg button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.who{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;font-size:14px;color:var(--mute)}
+.who .seg{margin:0}
+.who .seg button{height:34px;font-size:13px}
+.rows{margin-top:10px}
+.row{display:flex;justify-content:space-between;gap:20px;padding:15px 0}
+.row+.row{border-top:1px solid var(--line)}
+.row b{font:700 18px var(--font);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fine{margin-top:16px;font-size:13px;color:var(--mute)}
+.quotes .wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:28px}
+.quotes blockquote{font:400 clamp(22px,2.4vw,30px)/1.35 var(--font);font-stretch:96%;letter-spacing:-.01em}
+.quotes blockquote cite{display:block;margin-top:16px;font:500 14px var(--font);font-style:normal;color:var(--mute);letter-spacing:0}
+.q1{grid-column:1 / span 7}
+.q2{grid-column:6 / span 7;margin-top:24px}
+.q3{grid-column:2 / span 6;margin-top:24px}
+.score{grid-column:9 / span 4;grid-row:3;align-self:end;border-left:3px solid var(--orange);padding-left:20px}
+.score strong{display:block;font:800 64px/1 var(--font);font-stretch:118%}
+.score span{color:var(--mute);font-size:14px}
+.gift{padding:0}
+.gift .wrap{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;border:1.5px solid var(--ink);padding:44px}
+.gift h2{font-size:clamp(30px,3.6vw,48px);max-width:none}
+.gift p{color:var(--mute);margin-top:10px;max-width:52ch}
+.visit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+.visit .pic img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.addr{font:700 24px/1.3 var(--font);font-stretch:105%;margin:24px 0 8px}
+.hours{margin-top:28px}
+.hours div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.hours .today{font-weight:700}
+.hours .off{color:var(--mute)}
+.visit .now{margin-top:22px;font-size:15px}
+footer{border-top:1px solid var(--line);padding:32px 0;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+@media (max-width:1024px){nav ul{display:none}.nav-now{margin-left:auto}}
+@media (max-width:860px){
+ body{font-size:16px}
+ .hero{padding:28px 0 48px}
+ .hero .wrap,.concept .wrap,.tarifs .wrap,.visit .wrap{grid-template-columns:1fr;gap:40px}
+ .shot .frame{aspect-ratio:4/3}
+ .proof .wrap{grid-template-columns:1fr 1fr}
+ .proof div,.proof div+div{padding:22px 0;border-left:0}
+ .proof div:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+ .proof div:nth-child(n+3){border-top:1px solid var(--line)}
+ section{padding:80px 0}
+ .lineage{grid-template-columns:1fr;gap:0;margin-top:48px;padding-left:28px}
+ .lineage svg{display:none}
+ .lineage::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--orange)}
+ .lineage li{padding:0 0 32px}
+ .lineage li::before{left:-28px;top:3px}
+ .concept .pic{position:static}
+ .concept .pic img{aspect-ratio:4/3}
+ .principle{grid-template-columns:1fr;gap:8px}
+ .team-grid{grid-template-columns:1fr}
+ .person.lead{grid-row:auto;min-height:380px}
+ .quotes .wrap{grid-template-columns:1fr;gap:36px}
+ .q1,.q2,.q3,.score{grid-column:auto;grid-row:auto;margin-top:0}
+ .gift .wrap{grid-template-columns:1fr;padding:30px 22px}
+ .visit .pic{order:2}.visit .pic img{aspect-ratio:4/3}
+}
+@media (max-width:520px){
+ nav .wrap{gap:14px}
+ .nav-now{font-size:12.5px;min-width:0}
+ .nav-now span{overflow:hidden;text-overflow:ellipsis}
+ .mark small{display:none}
+ .nav-book{display:none}
+ .panel{padding:20px}
+ .person{padding:26px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}html.js .rv{opacity:1;transform:none}}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<nav aria-label="Main"><div class="wrap">
+ <a class="mark" href="#top"><b><span data-site="logoMain">KATTERA</span> <i data-site="logoAccent">HAIR</i></b><small data-site="owner">by Ravi Varma</small></a>
+ <ul><li><a href="#approach">Approach</a></li><li><a href="#team">Team</a></li><li><a href="#prices">Prices</a></li><li><a href="#studio">Studio</a></li></ul>
+ <span class="now nav-now" data-now><i></i><span>Hours</span></span>
+ <a class="btn sm nav-book" data-wa href="#">Book</a>
+</div></nav>
+
+<main id="top">
+<header class="hero"><div class="wrap">
+ <div>
+  <p class="kicker rv" data-site="kicker">Haircut studio · Madhapur, Hyderabad</p>
+  <h1 id="h1">Naturally good hair, <em>starting with the cut.</em></h1>
+  <p class="lede rv">Scissor cuts that fall back into place on their own, so you can skip the blow-dry on busy mornings.</p>
+  <div class="ctas rv"><a class="btn" data-wa href="#">Book on WhatsApp</a><a class="btn line" href="#prices">See prices</a></div>
+ </div>
+ <figure class="shot">
+  <div class="frame" id="heroFrame"><img id="heroImg" src="img/hero.webp" alt="A stylist cutting a section of hair held between two fingers" width="960" height="640" fetchpriority="high"></div>
+ </figure>
+</div></header>
+
+<div class="proof" aria-label="At a glance"><div class="wrap">
+ <div class="rv"><strong><span class="count" data-site="ratingScore">4.9</span><sup>/5</sup></strong><span>from <span data-site="ratingCount">418</span> Google reviews</span></div>
+ <div class="rv"><strong><span class="count">16</span> yrs</strong><span>of cutting experience for our founder</span></div>
+ <div class="rv"><strong><span class="count">3</span></strong><span>specialists: two stylists and a colourist</span></div>
+ <div class="rv"><strong>2018</strong><span>the year the studio opened</span></div>
+</div></div>
+
+<section class="manifesto" id="story"><div class="wrap">
+ <h2 class="rv">A good cut <em>grows out well.</em></h2>
+ <p class="body rv">We read how your hair grows, its texture and the shape of your face, then decide the right length and volume. That is why the cut still looks right six weeks later.</p>
+ <ol class="lineage" id="lineage">
+  <svg viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true"><path id="linePath" d="M8 1 H992"/></svg>
+  <li class="rv"><b>Training</b><small>2009</small><p>Ravi trains in precision scissor cutting and starts on the salon floor.</p></li>
+  <li class="rv"><b>Senior stylist</b><small>2013</small><p>Leads a team and starts teaching junior stylists the same method.</p></li>
+  <li class="rv"><b>Kattera opens</b><small>2018</small><p>A small studio built around one idea: cuts that need no styling.</p></li>
+  <li class="rv"><b>Today</b><small>Now</small><p>Three specialists, one method, and clients who come back every six weeks.</p></li>
+ </ol>
+</div></section>
+
+<section class="concept" id="approach"><div class="wrap">
+ <figure class="pic rv"><img src="img/texture.webp" alt="Close up of natural hair texture and movement" width="960" height="640" loading="lazy"></figure>
+ <div>
+  <h2 class="rv">No standard cuts. <em>Yours.</em></h2>
+  <p class="body rv">No photo catalogue, no one-size cut. Every appointment starts from your hair, in this order.</p>
+  <div class="principles">
+   <div class="principle rv"><h3>First, texture</h3><p>Every head of hair has its own density and direction.<span>We work with what your hair already does, not against it, so the result lasts.</span></p></div>
+   <div class="principle rv"><h3>Then, growth</h3><p>The way your hair grows decides where the cut falls.<span>The shape keeps its balance as it grows, so it never looks "due for a cut" too soon.</span></p></div>
+   <div class="principle rv"><h3>Last, your face</h3><p>Face shape comes third.<span>It fine-tunes the cut to bring out your best features without dictating it.</span></p></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="rdv" id="visit-steps">
+ <div class="wrap rdv-head">
+  <h2 class="rv">Your appointment, <em>in four steps.</em></h2>
+  <p class="rv">A cut you notice after the first wash, and in the way it grows over the following weeks.</p>
+ </div>
+ <div class="wrap">
+  <div class="track-wrap" id="trackWrap">
+   <div class="track" id="track">
+    <article class="moment"><div class="ph"><img src="img/scissors.webp" alt="Haircutting scissors hanging on a wall" width="960" height="640" loading="lazy"></div><div class="tx"><h3>Look</h3><p>Face shape, roots and hair type. Then a suggestion, and always a moment for you to think it over.</p></div></article>
+    <article class="moment accent"><div class="tx"><h3>Prepare</h3><p>Wash, conditioner and a head massage. A few quiet minutes before the change.</p></div></article>
+    <article class="moment"><div class="ph"><img src="img/hero.webp" alt="A haircut in progress with scissors" width="960" height="640" loading="lazy" style="object-position:20% 50%"></div><div class="tx"><h3>Cut</h3><p>Careful and precise. Each step is explained to you while the cut takes shape.</p></div></article>
+    <article class="moment"><div class="ph"><img src="img/finish.webp" alt="Hair styled with fingertips" width="960" height="640" loading="lazy"></div><div class="tx"><h3>Finish by hand</h3><p>A few minutes, no blow-dry. The same simple routine you can repeat at home.</p></div></article>
+   </div>
+  </div>
+  <p class="hint" id="hint">Swipe to see all four steps.</p>
+ </div>
+</section>
+
+<section class="team" id="team"><div class="wrap">
+ <h2 class="rv">Stylists <em>and a colourist.</em></h2>
+ <div class="team-grid">
+  <article class="person lead rv"><span class="mono" aria-hidden="true">R</span><h3>Ravi</h3><p class="role">Founder · Senior stylist</p><p>Sixteen years of precision cutting, eight of them teaching other stylists. He plans your cut from your texture, growth pattern and routine.</p></article>
+  <article class="person rv"><span class="mono" aria-hidden="true">S</span><h3>Sneha</h3><p class="role">Stylist</p><p>Trained in the studio by Ravi. Known for short cuts, curls and patient first-time consultations.</p></article>
+  <article class="person photo rv"><img src="img/colour.webp" alt="" width="960" height="639" loading="lazy"><span class="mono" aria-hidden="true">A</span><h3>Arjun</h3><p class="role">Colourist</p><p>Colour planned as part of the cut, from soft highlights to full grey coverage with ammonia-free options.</p></article>
+ </div>
+</div></section>
+
+<section class="tarifs" id="prices"><div class="wrap">
+ <div>
+  <h2 class="rv">Prices</h2>
+  <p class="body rv">Every cut includes a wash, head massage, cut and finish. Choose your stylist to see the price.</p>
+ </div>
+ <div class="panel rv">
+  <div class="seg" role="tablist" aria-label="Service categories" id="cats">
+   <button role="tab" aria-selected="true" data-cat="women">Women</button>
+   <button role="tab" aria-selected="false" data-cat="men">Men</button>
+   <button role="tab" aria-selected="false" data-cat="kids">Kids</button>
+   <button role="tab" aria-selected="false" data-cat="colour">Colour</button>
+   <button role="tab" aria-selected="false" data-cat="care">Care</button>
+  </div>
+  <div class="who" id="who"><span>With</span><div class="seg" id="lvl">
+   <button aria-pressed="true" data-lvl="senior">Ravi, senior stylist</button>
+   <button aria-pressed="false" data-lvl="stylist">Sneha, stylist</button>
+  </div></div>
+  <div class="rows" id="rows" role="tabpanel" aria-live="polite"></div>
+  <p class="fine">Prices in Indian rupees, including taxes.</p>
+ </div>
+</div></section>
+
+<!-- Replace these with real reviews from your own customers (with their permission). -->
+<section class="quotes" aria-label="Client reviews"><div class="wrap">
+ <blockquote class="q1 rv">“Six weeks later it still sits exactly right. I have not touched a hair dryer since.”<cite>Kavya, women's cut</cite></blockquote>
+ <blockquote class="q2 rv">“He explained every step, and my thick, wavy hair finally behaves on its own.”<cite>Harsha, men's cut</cite></blockquote>
+ <blockquote class="q3 rv">“Calm studio, no rush, and my daughter actually enjoys getting her hair cut now.”<cite>Pooja, kids' cut</cite></blockquote>
+ <div class="score rv"><strong data-site="ratingScore">4.9</strong><span>out of 5, from <span data-site="ratingCount">418</span> Google reviews</span></div>
+</div></section>
+
+<section class="gift" aria-label="Gift cards"><div class="wrap rv">
+ <div><h2>Gift a haircut.</h2><p>One or more services as a gift card, for birthdays, weddings or anyone who deserves a good cut.</p></div>
+ <a class="btn line" data-email="Gift card" href="#">Order by email</a>
+</div></section>
+
+<section class="visit" id="studio"><div class="wrap">
+ <figure class="pic rv"><img src="img/street.webp" alt="A quiet tree-lined street" width="960" height="1039" loading="lazy"></figure>
+ <div>
+  <h2 class="rv">The studio</h2>
+  <p class="body rv">A quiet lane a short walk from the main road, with easy two-wheeler parking outside.</p>
+  <p class="addr rv" data-site="address">Plot 44, Jubilee Enclave<br>Madhapur, Hyderabad 500081</p>
+  <span class="now rv" data-now><i></i><span>Hours</span></span>
+  <div class="hours rv" id="hours" aria-label="Opening hours"></div>
+  <div class="ctas rv"><a class="btn" data-wa href="#">Book</a><a class="btn line" data-tel href="#" data-site="phoneDisplay">+91 98480 11223</a><a class="btn line" data-maps href="#">Directions</a></div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <span>&copy; <span data-year>2026</span> <span data-site="name">Kattera Hair Studio</span></span>
+ <a data-email href="#" data-site="email">studio@katterahair.in</a>
+</div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+/* SITEKIT:BEGIN  Template engine. You do not need to edit anything in this block. */
+(function () {
+  var S = window.SITE || {};
+  var DAYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+  var NAMES = { sun: "Sunday", mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday" };
+  var ORDER = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function toMin(t) { var p = String(t).split(":"); return (+p[0]) * 60 + (+(p[1] || 0)); }
+  function fmt(m) { m = ((m % 1440) + 1440) % 1440; var h = Math.floor(m / 60), mm = m % 60; return ((h + 11) % 12 + 1) + (mm ? ":" + String(mm).padStart(2, "0") : "") + " " + (h >= 12 ? "PM" : "AM"); }
+  function slots(d) { return ((S.hours || {})[d] || []).map(function (s) { return [toMin(s[0]), toMin(s[1])]; }); }
+  function now() {
+    var p = new Intl.DateTimeFormat("en-US", { timeZone: S.timezone || "Asia/Kolkata", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+    var g = function (t) { return p.find(function (x) { return x.type === t; }).value; };
+    var key = g("weekday").slice(0, 3).toLowerCase();
+    return { day: DAYS.indexOf(key), key: key, min: (+g("hour") % 24) * 60 + (+g("minute")) };
+  }
+  function status() {
+    var n = now(), t = slots(n.key);
+    var cur = t.find(function (s) { return n.min >= s[0] && n.min < s[1]; });
+    if (cur) return { open: true, until: cur[1], text: "Open now · until " + fmt(cur[1]) };
+    var later = t.find(function (s) { return n.min < s[0]; });
+    if (later) return { open: false, next: later[0], text: "Closed now · opens " + fmt(later[0]) + " today" };
+    for (var k = 1; k <= 7; k++) {
+      var d = DAYS[(n.day + k) % 7], ts = slots(d);
+      if (ts.length) return { open: false, next: ts[0][0], text: "Closed now · opens " + (k === 1 ? "tomorrow" : NAMES[d]) + " " + fmt(ts[0][0]) };
+    }
+    return { open: false, text: "Closed" };
+  }
+  function dayLabel(d, sep) { var t = slots(d); return t.length ? t.map(function (s) { return fmt(s[0]) + " - " + fmt(s[1]); }).join(sep || ", ") : "Closed"; }
+
+  /* Small toast used in demo mode and for form messages */
+  var toastEl, toastTimer;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.setAttribute("role", "status");
+      toastEl.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;max-width:min(560px,calc(100% - 32px));width:max-content;background:#161616;color:#f5f5f3;font:500 14px/1.5 system-ui,sans-serif;padding:12px 16px;border-radius:12px;box-shadow:0 18px 40px -16px rgba(0,0,0,.5);opacity:0;transition:opacity .2s ease;pointer-events:none;text-align:center";
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg; toastEl.style.opacity = "1";
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { toastEl.style.opacity = "0"; }, 5200);
+  }
+  function waLink(msg) { return "https://wa.me/" + String(S.whatsapp || "").replace(/\D/g, "") + "?text=" + encodeURIComponent(msg || S.whatsappMessage || ""); }
+  function openWhatsApp(msg) {
+    if (S.demoMode) { toast("Demo mode: on the live site this opens WhatsApp to " + S.phoneDisplay + " with: “" + (msg || S.whatsappMessage) + "”"); return; }
+    window.open(waLink(msg), "_blank", "noopener");
+  }
+
+  /* Fill in text and links from SITE */
+  document.querySelectorAll("[data-site]").forEach(function (el) {
+    var v = S[el.getAttribute("data-site")]; if (v == null) return;
+    el.innerHTML = Array.isArray(v) ? v.map(esc).join(el.getAttribute("data-join") || "<br>") : esc(v);
+  });
+  document.querySelectorAll("[data-tel]").forEach(function (el) {
+    el.href = "tel:" + S.phone;
+    el.addEventListener("click", function (e) { if (S.demoMode) { e.preventDefault(); toast("Demo mode: on the live site this calls " + S.phoneDisplay + "."); } });
+  });
+  document.querySelectorAll("[data-wa]").forEach(function (el) {
+    var msg = el.getAttribute("data-wa") || S.whatsappMessage;
+    if (el.tagName === "A") { el.href = waLink(msg); el.target = "_blank"; el.rel = "noopener"; }
+    el.addEventListener("click", function (e) { e.preventDefault(); openWhatsApp(msg); });
+  });
+  document.querySelectorAll("[data-maps]").forEach(function (el) { el.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(S.mapsQuery || S.name); el.target = "_blank"; el.rel = "noopener"; });
+  document.querySelectorAll("[data-email]").forEach(function (el) { el.href = "mailto:" + S.email + (el.getAttribute("data-email") ? "?subject=" + encodeURIComponent(el.getAttribute("data-email")) : ""); });
+  document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+
+  window.SiteKit = { S: S, DAYS: DAYS, NAMES: NAMES, ORDER: ORDER, fmt: fmt, toMin: toMin, slots: slots, now: now, status: status, dayLabel: dayLabel, toast: toast, waLink: waLink, openWhatsApp: openWhatsApp, esc: esc };
+})();
+/* SITEKIT:END */
+</script>
+<script>
+const K = window.SiteKit;
+function renderHours(){
+ const st = K.status(), today = K.now().key;
+ document.querySelectorAll("[data-now]").forEach(el => { el.classList.toggle("on", st.open); el.querySelector("span").textContent = st.text; });
+ document.getElementById("hours").innerHTML = K.ORDER.map(d => { const open = K.slots(d).length;
+  return `<div class="${d === today ? "today" : ""} ${open ? "" : "off"}"><span>${K.NAMES[d]}${d === today ? " (today)" : ""}</span><span>${K.dayLabel(d)}</span></div>`; }).join("");
+}
+renderHours(); setInterval(renderHours, 60000);
+
+/* PRICES: edit freely. Rows with two numbers = [senior price, stylist price]. Rows with text = fixed price. */
+const PRICES = {
+ women:{lvl:true, rows:[["Wash, massage, cut and finish",1200,900],["Fringe trim",300,300]]},
+ men:{lvl:true, rows:[["Wash, massage, cut and finish",800,600],["Beard shape",250,250]]},
+ kids:{lvl:true, rows:[["Wash, cut and finish (up to 12 years)",500,400]]},
+ colour:{lvl:false, rows:[["Root touch-up (ammonia-free)","₹1,400"],["Global colour, short hair","₹2,200"],["Global colour, long hair","₹3,500"],["Highlights or balayage","₹3,000 to ₹7,500"]]},
+ care:{lvl:false, rows:[["Wash, massage and finish","₹450"],["Wash and blow-dry","₹600"],["Hair spa","₹1,200"],["Deep-conditioning mask","₹350"],["Keratin smoothing","from ₹4,500"]]}
+};
+const rs = n => "₹" + Number(n).toLocaleString("en-IN");
+let cat = "women", lvl = "senior";
+function renderPrices(){
+ const c = PRICES[cat]; document.getElementById("who").style.display = c.lvl ? "" : "none";
+ document.getElementById("rows").innerHTML = c.rows.map(r => `<div class="row"><span>${r[0]}</span><b>${c.lvl ? rs(lvl === "senior" ? r[1] : r[2]) : r[1]}</b></div>`).join("");
+}
+document.querySelectorAll("#cats button").forEach(b => b.addEventListener("click", () => { cat = b.dataset.cat; document.querySelectorAll("#cats button").forEach(x => x.setAttribute("aria-selected", String(x === b))); renderPrices(); }));
+document.querySelectorAll("#lvl button").forEach(b => b.addEventListener("click", () => { lvl = b.dataset.lvl; document.querySelectorAll("#lvl button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); renderPrices(); }));
+renderPrices();
+
+const h1 = document.getElementById("h1");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!window.gsap || reduce) { document.documentElement.classList.remove("js"); }
+else {
+ h1.innerHTML = h1.innerHTML.replace(/(<em>.*?<\/em>|[^\s<]+)/g, m => `<span class="w"><span>${m}</span></span>`);
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from("#h1 .w>span", {yPercent:110, duration:1.2, stagger:.06, ease:"expo.out", delay:.1});
+ gsap.fromTo("#heroFrame", {clipPath:"inset(0 0 100% 0)"}, {clipPath:"inset(0 0 0% 0)", duration:1.3, ease:"expo.inOut", delay:.2});
+ gsap.to("#heroImg", {yPercent:-10, ease:"none", scrollTrigger:{trigger:".hero", start:"top top", end:"bottom top", scrub:true}});
+ gsap.utils.toArray(".rv").forEach(el => gsap.to(el, {opacity:1, y:0, duration:1, ease:"expo.out", delay: el.closest(".hero") ? .35 : 0, scrollTrigger: el.closest(".hero") ? undefined : {trigger:el, start:"top 92%", once:true}}));
+ document.querySelectorAll(".count").forEach(el => { const raw = el.textContent.trim(), end = parseFloat(raw); if (isNaN(end)) return; const dec = raw.includes(".") ? 1 : 0, o = {v:0};
+  gsap.to(o, {v:end, duration:1.6, ease:"power3.out", scrollTrigger:{trigger:el, start:"top 95%", once:true}, onUpdate:() => el.textContent = o.v.toFixed(dec)}); });
+ const p = document.getElementById("linePath");
+ gsap.fromTo(p, {strokeDasharray:1000, strokeDashoffset:1000}, {strokeDashoffset:0, ease:"none", scrollTrigger:{trigger:"#lineage", start:"top 85%", end:"bottom 55%", scrub:true}});
+ gsap.matchMedia().add("(min-width: 1025px)", () => {
+  const wrap = document.getElementById("trackWrap"), track = document.getElementById("track");
+  wrap.style.overflow = "visible"; document.getElementById("hint").style.visibility = "hidden";
+  const dist = () => Math.max(0, track.scrollWidth - wrap.clientWidth);
+  gsap.to(track, {x:() => -dist(), ease:"none", scrollTrigger:{trigger:"#visit-steps", start:"top top", end:() => "+=" + dist(), pin:true, scrub:1, invalidateOnRefresh:true}});
+  return () => { wrap.style.overflow = ""; document.getElementById("hint").style.visibility = ""; };
+ });
+ addEventListener("load", () => ScrollTrigger.refresh());
+}
+</script>
+<style>.kits-bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:center;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:#111214;color:#f4f4f5;font:500 13.5px/1.4 system-ui,sans-serif;text-align:center}.kits-bar a{color:#9fb0ff;font-weight:600}body{padding-bottom:64px}</style>
+<div class="kits-bar" role="note"><span>Template preview. The business, reviews and contact details are fictional.</span><a href="../../#templates">Get this template pack</a></div>
+</body>
+</html>

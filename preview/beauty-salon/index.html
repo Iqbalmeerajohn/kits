@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* =====================================================================
+   EDIT YOUR BUSINESS DETAILS HERE
+   Change the values in quotes, save the file and refresh the browser.
+   Name, phone, WhatsApp, address, hours and colours update everywhere
+   on the page. Full guide: README.md
+   ===================================================================== */
+window.SITE = {
+  name: "Mallika Beauty Lounge",
+  shortName: "Mallika",                       // short name used in the logo and messages
+  phone: "+919848067890",                     // for tap-to-call: + country code, no spaces
+  phoneDisplay: "+91 98480 67890",            // how the number is printed on the page
+  whatsapp: "919848067890",                   // country code + number, digits only
+  whatsappMessage: "Hi Mallika Beauty Lounge, I would like to book an appointment.",
+  email: "book@mallikabeauty.in",
+  area: "Seethammadhara",                     // locality used in the headline
+  address: ["Door 12-8-41, Park View Lane", "Seethammadhara, Visakhapatnam 530013"],
+  mapsQuery: "Mallika Beauty Lounge, Seethammadhara, Visakhapatnam",
+  ratingScore: "4.9",                         // only show real numbers from your Google profile
+  ratingCount: "286",
+  timezone: "Asia/Kolkata",
+  /* Opening hours, 24-hour clock. [] means closed. */
+  hours: {
+    mon: [["10:00", "20:30"]],
+    tue: [["10:00", "20:30"]],
+    wed: [["10:00", "20:30"]],
+    thu: [["10:00", "20:30"]],
+    fri: [["10:00", "20:30"]],
+    sat: [["09:00", "21:00"]],
+    sun: [["09:00", "21:00"]]
+  },
+  /* Brand colours */
+  colors: {
+    wine: "#7a2e4f",      // buttons and highlights
+    plum: "#3d1f33",      // headings and dark sections
+    rose: "#f6e7e3",      // page background
+    blush: "#eccfc8"      // borders and soft fills
+  },
+  /* true = call and WhatsApp buttons show a preview message instead of
+     dialling. Set to false before you publish the site. */
+  demoMode: true
+};
+(function (c) { var r = document.documentElement.style; for (var k in c) r.setProperty("--" + k, c[k]); })(window.SITE.colors);
+</script>
+<!-- EDIT: the page title and description Google shows in search results -->
+<title>Mallika Beauty Lounge | Beauty Parlour in Seethammadhara, Visakhapatnam</title>
+<meta name="description" content="Bridal makeup, saree draping, facials, hair and nail care for women and men. Pick your services and book on WhatsApp in 20 seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#f6e7e3;--blush:#eccfc8;--plum:#3d1f33;--wine:#7a2e4f;--gold:#7d5a2c;--ink:#24151f;--muted:#66515c;--card:#fffaf8;--display:"Playfair Display",Georgia,serif;--body:"Manrope",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--rose);color:var(--ink);font:400 16px/1.6 var(--body);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+html.js .reveal{opacity:0;transform:translateY(24px)}
+:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--rose) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(61,31,51,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font:600 21px var(--display);color:var(--plum);text-decoration:none}
+.logo span.m{width:34px;height:34px;border-radius:50%;background:var(--plum);color:#f3b7c9;display:grid;place-items:center;font:600 17px var(--display);flex:none}
+nav ul{display:flex;gap:26px;list-style:none;font-weight:500;font-size:15px}
+nav ul a{text-decoration:none;color:var(--muted)}nav ul a:hover{color:var(--wine)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;background:var(--wine);color:#fff;font:700 15px var(--body);padding:13px 22px;text-decoration:none;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.btn:hover{background:var(--plum)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--plum);box-shadow:inset 0 0 0 1.5px var(--plum)}
+.btn.ghost:hover{background:var(--plum);color:#fff}
+.btn.sm{padding:9px 16px;font-size:14px}
+.hero{padding:56px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:9px;background:var(--card);border-radius:999px;padding:7px 14px 7px 10px;font-weight:600;font-size:14px;box-shadow:0 1px 0 rgba(61,31,51,.06)}
+.dot{width:10px;height:10px;border-radius:50%;background:#9a8a92;position:relative;flex:none}
+.dot.on{background:#2f9e6a}.dot.on::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid #2f9e6a;opacity:.4;animation:ping 2s ease-out infinite}
+@keyframes ping{from{transform:scale(.6);opacity:.6}to{transform:scale(1.4);opacity:0}}
+h1{font:400 clamp(38px,4.6vw,62px)/1.08 var(--display);color:var(--plum);letter-spacing:-.02em;margin:22px 0 20px}
+h1 em{font-style:italic;color:var(--wine);display:inline-block;padding-bottom:.06em}
+.lede{font-size:18px;color:var(--muted);max-width:30em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:38px}
+.facts div{font-size:13px;color:var(--muted)}.facts strong{display:block;font:600 30px var(--display);color:var(--plum)}
+.frame{position:relative;border-radius:200px 200px 24px 24px;overflow:hidden;aspect-ratio:4/5;background:var(--blush)}
+.frame img{width:100%;height:118%;max-width:none;object-fit:cover}
+.tag{position:absolute;left:-18px;bottom:34px;background:var(--card);border-radius:16px;padding:14px 18px;box-shadow:0 18px 40px -18px rgba(61,31,51,.45);font-size:13px;max-width:230px}
+.tag b{display:block;font:600 16px var(--display);color:var(--plum)}
+.hero-art{position:relative}
+section{padding:84px 0}
+.eyebrow{font:700 12px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+h2{font:400 clamp(32px,4.4vw,52px)/1.08 var(--display);color:var(--plum);margin:10px 0 16px;letter-spacing:-.01em}
+.sub{color:var(--muted);max-width:36em}
+.loved{background:var(--card)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.svc{border-radius:20px;overflow:hidden;background:var(--rose);display:flex;flex-direction:column}
+.svc img{aspect-ratio:4/3;width:100%;height:auto;object-fit:cover}
+.svc div{padding:20px 22px 24px}
+.svc h3{font:600 22px var(--display);color:var(--plum);margin-bottom:6px}
+.svc p{color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{background:var(--rose);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:500;color:var(--plum)}
+.chip small{color:var(--muted);font-weight:500}
+.note{font-size:13px;color:var(--muted);margin-top:22px}
+.plan .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.picker{background:var(--card);border-radius:24px;padding:28px}
+.opts{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 22px}
+.opt{border:1.5px solid var(--blush);background:#fff;border-radius:999px;padding:9px 15px;font:500 14px var(--body);color:var(--plum);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.opt[aria-pressed="true"]{background:var(--plum);border-color:var(--plum);color:#fff}
+label,.lbl{font-weight:700;font-size:14px;color:var(--plum);display:block}
+select,input{width:100%;margin-top:8px;border:1.5px solid var(--blush);border-radius:12px;padding:12px 14px;font:500 15px var(--body);background:#fff;color:var(--ink)}
+input::placeholder{color:#8a7680}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.msg{margin-top:18px;background:var(--rose);border-radius:14px;padding:14px 16px;font-size:14px;color:var(--plum);min-height:48px}
+.quotes{background:var(--plum);color:#fff}
+.quotes .eyebrow{color:#f3d9a8}
+.qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+blockquote{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:26px;font:400 20px/1.4 var(--display)}
+blockquote cite{display:block;margin-top:14px;font:500 13px var(--body);color:#ecd3dc;font-style:normal}
+.big{display:flex;align-items:baseline;flex-wrap:wrap;gap:14px;margin-top:8px}
+.big strong{font:400 84px/1 var(--display);color:#f3b7c9}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+table{width:100%;border-collapse:collapse;margin-top:18px;font-size:15px}
+td{padding:11px 0;border-bottom:1px solid var(--blush)}td:last-child{text-align:right;font-weight:600}
+tr.today td{color:var(--wine);font-weight:700}
+.card{background:var(--card);border-radius:24px;padding:30px}
+.addr{font:400 22px/1.4 var(--display);color:var(--plum);margin:12px 0 18px}
+.mapbox{margin-top:22px;border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:var(--blush)}
+.mapbox svg{width:100%;height:100%;display:block}
+footer{padding:36px 0;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (max-width:900px){
+ nav ul{display:none}
+ .hero{padding:32px 0 56px}
+ .hero .wrap,.plan .wrap,.visit .wrap{grid-template-columns:1fr;gap:36px}
+ .grid,.qgrid{grid-template-columns:1fr}
+ .frame{aspect-ratio:1/1;border-radius:160px 160px 20px 20px}
+ .tag{left:12px}
+ section{padding:64px 0}
+}
+@media (max-width:420px){.row{grid-template-columns:1fr}.facts{gap:20px}.facts strong{font-size:26px}.card,.picker{padding:22px}}
+@media (prefers-reduced-motion:reduce){.dot.on::after{animation:none}html{scroll-behavior:auto}html.js .reveal{opacity:1;transform:none}}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<nav><div class="wrap">
+ <a class="logo" href="#top"><span class="m" aria-hidden="true">M</span><span data-site="shortName">Mallika</span></a>
+ <ul><li><a href="#loved">Services</a></li><li><a href="#plan">Book</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#visit">Visit</a></li></ul>
+ <a class="btn sm" data-tel href="#">Call now</a>
+</div></nav>
+
+<main id="top">
+<header class="hero"><div class="wrap">
+ <div>
+  <span class="status reveal"><span class="dot" id="dot"></span><span id="openTxt">Checking hours</span></span>
+  <h1 class="reveal">Your <span data-site="area">Seethammadhara</span> beauty parlour, <em>for every big day</em> and every ordinary one.</h1>
+  <p class="lede reveal">A women-run salon for women and men, from eyebrows and head massages to bridal makeup and saree draping.</p>
+  <div class="cta reveal"><a class="btn" href="#plan">Plan a visit</a><a class="btn ghost" data-maps href="#">Get directions</a></div>
+  <div class="facts reveal">
+   <div><strong><span class="count" data-site="ratingScore">4.9</span>★</strong>Google rating</div>
+   <div><strong><span class="count" data-site="ratingCount">286</span></strong>Google reviews</div>
+   <div><strong>7 days</strong>open every week</div>
+  </div>
+ </div>
+ <div class="hero-art reveal">
+  <div class="frame"><img id="heroImg" src="img/p0.webp" alt="A makeup brush on a sunny window sill" width="960" height="720" fetchpriority="high"></div>
+  <div class="tag"><b>Bridal bookings open</b>Every bridal look includes a trial session.</div>
+ </div>
+</div></header>
+
+<section class="loved" id="loved"><div class="wrap">
+ <p class="eyebrow reveal">What guests come back for</p>
+ <h2 class="reveal">Small rituals, big occasions.</h2>
+ <p class="sub reveal">Our most-booked services, done carefully with fresh, single-use tools for every guest.</p>
+ <div class="grid">
+  <article class="svc reveal"><img src="img/p1.webp" alt="An open eyeshadow palette" loading="lazy" width="960" height="640"><div><h3>Bridal makeup &amp; saree draping</h3><p>A trial look before the wedding, then the full look on the day, finished on time.</p></div></article>
+  <article class="svc reveal"><img src="img/p2.webp" alt="A manicure in progress" loading="lazy" width="960" height="640"><div><h3>Manicure &amp; pedicure</h3><p>Unhurried, thorough and soothing, with a hand or foot massage to finish.</p></div></article>
+  <article class="svc reveal"><img src="img/p3.webp" alt="A stylist trimming hair" loading="lazy" width="960" height="1440" style="object-position:50% 30%"><div><h3>Hair, for women &amp; men</h3><p>Cuts, washes, hair spa and head massage, for the whole family.</p></div></article>
+ </div>
+ <div class="chips reveal">
+  <span class="chip">Eyebrows <small>from ₹60</small></span><span class="chip">Facials <small>from ₹700</small></span><span class="chip">Head massage <small>from ₹300</small></span><span class="chip">Hair spa <small>from ₹900</small></span><span class="chip">Waxing <small>from ₹250</small></span><span class="chip">Saree draping <small>from ₹500</small></span>
+ </div>
+ <p class="note">Prices are starting prices. Final price depends on hair length and products chosen.</p>
+</div></section>
+
+<section class="plan" id="plan"><div class="wrap">
+ <div>
+  <h2 class="reveal">Pick what you need. We'll reply on WhatsApp.</h2>
+  <p class="sub reveal">No app, no login. You send one clear message with your services and time, and we confirm your slot.</p>
+ </div>
+ <form class="picker reveal" id="picker">
+  <span class="lbl" id="svcLbl">Services</span>
+  <div class="opts" id="opts" role="group" aria-labelledby="svcLbl">
+   <button type="button" class="opt" aria-pressed="false">Eyebrows</button>
+   <button type="button" class="opt" aria-pressed="false">Haircut</button>
+   <button type="button" class="opt" aria-pressed="false">Facial</button>
+   <button type="button" class="opt" aria-pressed="false">Head massage</button>
+   <button type="button" class="opt" aria-pressed="false">Manicure</button>
+   <button type="button" class="opt" aria-pressed="false">Pedicure</button>
+   <button type="button" class="opt" aria-pressed="false">Bridal trial</button>
+   <button type="button" class="opt" aria-pressed="false">Saree draping</button>
+  </div>
+  <div class="row">
+   <div><label for="day">Day</label><select id="day"></select></div>
+   <div><label for="slot">Time</label><select id="slot"></select></div>
+  </div>
+  <label for="nm">Your name</label><input id="nm" placeholder="e.g. Lakshmi" autocomplete="name">
+  <div class="msg" id="msg" aria-live="polite">Choose a service to see your message.</div>
+  <div style="margin-top:18px"><button class="btn" type="submit">Send on WhatsApp</button></div>
+ </form>
+</div></section>
+
+<!-- Replace these with real reviews from your own customers (with their permission). -->
+<section class="quotes" id="reviews"><div class="wrap">
+ <p class="eyebrow reveal">Guest reviews</p>
+ <div class="big reveal"><strong data-site="ratingScore">4.9</strong><span>out of 5, from <span data-site="ratingCount">286</span> Google reviews</span></div>
+ <div class="qgrid">
+  <blockquote class="reveal">“My bridal trial and wedding-day look were exactly what I asked for, and they finished on time.”<cite>Sravani, bridal makeup</cite></blockquote>
+  <blockquote class="reveal">“Clean, calm and never rushed. The pedicure was the most relaxing hour of my week.”<cite>Meena, manicure and pedicure</cite></blockquote>
+  <blockquote class="reveal">“I bring my mother and my son here. Everyone gets the same care.”<cite>Anitha, family visits</cite></blockquote>
+ </div>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+ <div class="reveal">
+  <h2>Open every day.</h2>
+  <table id="hours" aria-label="Opening hours"></table>
+  <p class="note">Festival days may differ. Call ahead on public holidays.</p>
+ </div>
+ <div class="card reveal">
+  <p class="eyebrow">Find us</p>
+  <p class="addr" data-site="address">Door 12-8-41, Park View Lane<br>Seethammadhara, Visakhapatnam 530013</p>
+  <div class="cta" style="margin-top:0"><a class="btn" data-maps href="#">Open in Google Maps</a><a class="btn ghost" data-tel href="#" data-site="phoneDisplay">+91 98480 67890</a></div>
+  <div class="mapbox" aria-hidden="true">
+   <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><rect width="320" height="200" fill="#eccfc8"/><path d="M0 120 L320 90" stroke="#fffaf8" stroke-width="14"/><path d="M110 0 L150 200" stroke="#fffaf8" stroke-width="10"/><path d="M0 40 L320 60" stroke="#fffaf8" stroke-width="6"/><path d="M230 0 L250 200" stroke="#fffaf8" stroke-width="6"/><g transform="translate(170 96)"><path d="M0 -26c-10 0-18 8-18 18 0 13 18 30 18 30s18-17 18-30c0-10-8-18-18-18z" fill="#7a2e4f"/><circle cy="-8" r="6" fill="#fffaf8"/></g></svg>
+  </div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>&copy; <span data-year>2026</span> <span data-site="name">Mallika Beauty Lounge</span></span><a data-email href="#" data-site="email">book@mallikabeauty.in</a></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+/* SITEKIT:BEGIN  Template engine. You do not need to edit anything in this block. */
+(function () {
+  var S = window.SITE || {};
+  var DAYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+  var NAMES = { sun: "Sunday", mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday" };
+  var ORDER = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function toMin(t) { var p = String(t).split(":"); return (+p[0]) * 60 + (+(p[1] || 0)); }
+  function fmt(m) { m = ((m % 1440) + 1440) % 1440; var h = Math.floor(m / 60), mm = m % 60; return ((h + 11) % 12 + 1) + (mm ? ":" + String(mm).padStart(2, "0") : "") + " " + (h >= 12 ? "PM" : "AM"); }
+  function slots(d) { return ((S.hours || {})[d] || []).map(function (s) { return [toMin(s[0]), toMin(s[1])]; }); }
+  function now() {
+    var p = new Intl.DateTimeFormat("en-US", { timeZone: S.timezone || "Asia/Kolkata", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+    var g = function (t) { return p.find(function (x) { return x.type === t; }).value; };
+    var key = g("weekday").slice(0, 3).toLowerCase();
+    return { day: DAYS.indexOf(key), key: key, min: (+g("hour") % 24) * 60 + (+g("minute")) };
+  }
+  function status() {
+    var n = now(), t = slots(n.key);
+    var cur = t.find(function (s) { return n.min >= s[0] && n.min < s[1]; });
+    if (cur) return { open: true, until: cur[1], text: "Open now · until " + fmt(cur[1]) };
+    var later = t.find(function (s) { return n.min < s[0]; });
+    if (later) return { open: false, next: later[0], text: "Closed now · opens " + fmt(later[0]) + " today" };
+    for (var k = 1; k <= 7; k++) {
+      var d = DAYS[(n.day + k) % 7], ts = slots(d);
+      if (ts.length) return { open: false, next: ts[0][0], text: "Closed now · opens " + (k === 1 ? "tomorrow" : NAMES[d]) + " " + fmt(ts[0][0]) };
+    }
+    return { open: false, text: "Closed" };
+  }
+  function dayLabel(d, sep) { var t = slots(d); return t.length ? t.map(function (s) { return fmt(s[0]) + " - " + fmt(s[1]); }).join(sep || ", ") : "Closed"; }
+
+  /* Small toast used in demo mode and for form messages */
+  var toastEl, toastTimer;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.setAttribute("role", "status");
+      toastEl.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;max-width:min(560px,calc(100% - 32px));width:max-content;background:#161616;color:#f5f5f3;font:500 14px/1.5 system-ui,sans-serif;padding:12px 16px;border-radius:12px;box-shadow:0 18px 40px -16px rgba(0,0,0,.5);opacity:0;transition:opacity .2s ease;pointer-events:none;text-align:center";
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg; toastEl.style.opacity = "1";
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { toastEl.style.opacity = "0"; }, 5200);
+  }
+  function waLink(msg) { return "https://wa.me/" + String(S.whatsapp || "").replace(/\D/g, "") + "?text=" + encodeURIComponent(msg || S.whatsappMessage || ""); }
+  function openWhatsApp(msg) {
+    if (S.demoMode) { toast("Demo mode: on the live site this opens WhatsApp to " + S.phoneDisplay + " with: “" + (msg || S.whatsappMessage) + "”"); return; }
+    window.open(waLink(msg), "_blank", "noopener");
+  }
+
+  /* Fill in text and links from SITE */
+  document.querySelectorAll("[data-site]").forEach(function (el) {
+    var v = S[el.getAttribute("data-site")]; if (v == null) return;
+    el.innerHTML = Array.isArray(v) ? v.map(esc).join(el.getAttribute("data-join") || "<br>") : esc(v);
+  });
+  document.querySelectorAll("[data-tel]").forEach(function (el) {
+    el.href = "tel:" + S.phone;
+    el.addEventListener("click", function (e) { if (S.demoMode) { e.preventDefault(); toast("Demo mode: on the live site this calls " + S.phoneDisplay + "."); } });
+  });
+  document.querySelectorAll("[data-wa]").forEach(function (el) {
+    var msg = el.getAttribute("data-wa") || S.whatsappMessage;
+    if (el.tagName === "A") { el.href = waLink(msg); el.target = "_blank"; el.rel = "noopener"; }
+    el.addEventListener("click", function (e) { e.preventDefault(); openWhatsApp(msg); });
+  });
+  document.querySelectorAll("[data-maps]").forEach(function (el) { el.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(S.mapsQuery || S.name); el.target = "_blank"; el.rel = "noopener"; });
+  document.querySelectorAll("[data-email]").forEach(function (el) { el.href = "mailto:" + S.email + (el.getAttribute("data-email") ? "?subject=" + encodeURIComponent(el.getAttribute("data-email")) : ""); });
+  document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+
+  window.SiteKit = { S: S, DAYS: DAYS, NAMES: NAMES, ORDER: ORDER, fmt: fmt, toMin: toMin, slots: slots, now: now, status: status, dayLabel: dayLabel, toast: toast, waLink: waLink, openWhatsApp: openWhatsApp, esc: esc };
+})();
+/* SITEKIT:END */
+</script>
+<script>
+const K = window.SiteKit, S = K.S;
+function updateOpen(){
+ const st = K.status(), today = K.now().key;
+ document.getElementById("dot").classList.toggle("on", st.open);
+ document.getElementById("openTxt").textContent = st.text;
+ document.getElementById("hours").innerHTML = K.ORDER.map(d => `<tr class="${d===today?"today":""}"><td>${K.NAMES[d]}${d===today?" (today)":""}</td><td>${K.dayLabel(d)}</td></tr>`).join("");
+}
+updateOpen(); setInterval(updateOpen, 60000);
+
+/* Booking picker: next 7 days, hourly slots inside that day's opening hours */
+const daySel = document.getElementById("day"), slotSel = document.getElementById("slot"), nmIn = document.getElementById("nm");
+const base = K.now();
+for (let i = 0; i < 7; i++){
+ const key = K.DAYS[(base.day + i) % 7];
+ if (!K.slots(key).length) continue;
+ const d = new Date(Date.now() + i*864e5);
+ const lbl = i===0 ? "Today" : i===1 ? "Tomorrow" : new Intl.DateTimeFormat("en-IN",{timeZone:S.timezone,weekday:"short",day:"numeric",month:"short"}).format(d);
+ const o = new Option(lbl, lbl); o.dataset.key = key; o.dataset.offset = i; daySel.add(o);
+}
+function fillSlots(){
+ const o = daySel.selectedOptions[0]; slotSel.innerHTML = ""; if (!o) return;
+ K.slots(o.dataset.key).forEach(([a,b]) => { for (let m = Math.ceil(a/60)*60; m <= b-60; m += 60){ if (o.dataset.offset === "0" && m <= base.min) continue; slotSel.add(new Option(K.fmt(m), K.fmt(m))); } });
+ if (!slotSel.options.length) slotSel.add(new Option("Any time", "any time"));
+}
+fillSlots();
+const chosen = new Set();
+document.querySelectorAll(".opt").forEach(b => b.addEventListener("click", () => { const on = b.getAttribute("aria-pressed")!=="true"; b.setAttribute("aria-pressed", String(on)); on ? chosen.add(b.textContent) : chosen.delete(b.textContent); compose(); }));
+daySel.addEventListener("input", () => { fillSlots(); compose(); });
+[slotSel, nmIn].forEach(el => el.addEventListener("input", compose));
+function message(){ const nm = nmIn.value.trim(), dv = daySel.value;
+ return `Hi ${S.shortName}, ${nm ? "this is " + nm + ". I" : "I"} would like ${[...chosen].join(", ").toLowerCase()} ${dv === "Today" || dv === "Tomorrow" ? dv.toLowerCase() : "on " + dv} around ${slotSel.value}. Is that slot free?`; }
+function compose(){ document.getElementById("msg").textContent = chosen.size ? message() : "Choose a service to see your message."; }
+document.getElementById("picker").addEventListener("submit", e => { e.preventDefault();
+ if (!chosen.size) { K.toast("Pick at least one service first."); return; }
+ K.openWhatsApp(message()); });
+
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!window.gsap || reduced){ document.documentElement.classList.remove("js"); }
+else {
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.utils.toArray(".hero .reveal").forEach((el,i) => gsap.to(el,{opacity:1,y:0,duration:1,ease:"expo.out",delay:.1+i*.08}));
+ gsap.utils.toArray(".reveal").filter(el => !el.closest(".hero")).forEach(el => gsap.to(el,{opacity:1,y:0,duration:.9,ease:"expo.out",scrollTrigger:{trigger:el,start:"top 92%",once:true}}));
+ gsap.to("#heroImg",{yPercent:-12,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+ gsap.from(".tag",{x:-20,opacity:0,duration:.9,delay:.9,ease:"back.out(1.6)"});
+ document.querySelectorAll(".count").forEach(el => { const raw = el.textContent.trim(), end = parseFloat(raw); if (isNaN(end)) return; const dec = raw.includes(".") ? 1 : 0, o = {v:0};
+  gsap.to(o,{v:end,duration:1.6,delay:.6,ease:"power3.out",onUpdate:()=> el.textContent = o.v.toFixed(dec)}); });
+ addEventListener("load", () => ScrollTrigger.refresh());
+}
+</script>
+<style>.kits-bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:center;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:#111214;color:#f4f4f5;font:500 13.5px/1.4 system-ui,sans-serif;text-align:center}.kits-bar a{color:#9fb0ff;font-weight:600}body{padding-bottom:64px}</style>
+<div class="kits-bar" role="note"><span>Template preview. The business, reviews and contact details are fictional.</span><a href="../../#templates">Get this template pack</a></div>
+</body>
+</html>

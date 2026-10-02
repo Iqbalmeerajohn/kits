@@ -1,0 +1,7 @@
+# Paid product files: never publish (products/ is its own private repo)
+dist/
+products/
+# local/build scratch
+__pycache__/
+*.pyc
+.qa/

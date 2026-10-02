@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>
+/* =====================================================================
+   EDIT YOUR BUSINESS DETAILS HERE
+   Change the values in quotes, save the file and refresh the browser.
+   Name, phone, WhatsApp, address, hours and colours update everywhere
+   on the page. Full guide: README.md
+   ===================================================================== */
+window.SITE = {
+  name: "Ironmonk Strength Club",
+  shortName: "IRONMONK",                      // shown in the top bar
+  phone: "+919848054321",                     // for tap-to-call: + country code, no spaces
+  phoneDisplay: "+91 98480 54321",            // how the number is printed on the page
+  whatsapp: "919848054321",                   // country code + number, digits only
+  whatsappMessage: "Hi Ironmonk, please send me today's membership prices.",
+  email: "train@ironmonk.in",
+  area: "MVP Colony, Visakhapatnam",          // short locality shown in the ticker
+  address: ["2nd and 3rd Floors, Sagar Towers", "Sector 6, MVP Colony", "Visakhapatnam 530017"],
+  mapsQuery: "Ironmonk Strength Club, MVP Colony, Visakhapatnam",
+  ratingScore: "4.8",                         // only show real numbers from your Google profile
+  ratingCount: "164",
+  timezone: "Asia/Kolkata",
+  /* Opening hours, 24-hour clock. Each [start, end] is one session. [] means closed. */
+  hours: {
+    mon: [["05:00", "12:00"], ["16:00", "22:00"]],
+    tue: [["05:00", "12:00"], ["16:00", "22:00"]],
+    wed: [["05:00", "12:00"], ["16:00", "22:00"]],
+    thu: [["05:00", "12:00"], ["16:00", "22:00"]],
+    fri: [["05:00", "12:00"], ["16:00", "22:00"]],
+    sat: [["05:00", "12:00"], ["16:00", "22:00"]],
+    sun: [["06:00", "11:00"]]
+  },
+  /* Brand colours */
+  colors: {
+    hot: "#ff5a1f",       // main accent (buttons, highlights)
+    "hot-2": "#ff7a45",   // button hover
+    ink: "#0f0f10",       // page background
+    bone: "#f2efe9"       // main text colour
+  },
+  /* true = call and WhatsApp buttons show a preview message instead of
+     dialling. Set to false before you publish the site. */
+  demoMode: true
+};
+(function (c) { var r = document.documentElement.style; for (var k in c) r.setProperty("--" + k, c[k]); })(window.SITE.colors);
+</script>
+<!-- EDIT: the page title and description Google shows in search results -->
+<title>Ironmonk Strength Club | Gym in MVP Colony, Visakhapatnam</title>
+<meta name="description" content="Strength, fat loss and personal training. Open early mornings and late evenings, seven days a week. Message us on WhatsApp for today's membership prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700;800&display=swap">
+<style>
+:root{--ink:#0f0f10;--ink-2:#18181a;--ink-3:#232326;--line:#2e2e32;--bone:#f2efe9;--mute:#a4a19a;--hot:#ff5a1f;--hot-2:#ff7a45;
+  --display:"Anton",Impact,sans-serif;--body:"Archivo",system-ui,sans-serif;--ease:cubic-bezier(.23,1,.32,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font:17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--hot);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+nav{position:fixed;inset:0 0 auto 0;z-index:20;background:rgb(15 15 16 / .82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:70px}
+.logo{font:400 22px var(--display);letter-spacing:.04em;text-decoration:none;color:#fff}
+nav .cta{font:800 13px var(--body);letter-spacing:.12em;text-transform:uppercase;color:#fff;text-decoration:none;border:2px solid #fff;padding:9px 16px;border-radius:999px}
+.hero{min-height:100dvh;position:relative;display:grid;align-items:end;padding-block:110px 90px;overflow:hidden;isolation:isolate}
+.hero .bg{position:absolute;inset:0;z-index:-1}
+.hero .bg img{width:100%;height:120%;object-fit:cover;filter:grayscale(.4) contrast(1.1) brightness(.45);will-change:transform}
+.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb(15 15 16 / .3),var(--ink) 92%)}
+.live{display:inline-flex;align-items:center;gap:10px;font:800 13px var(--body);letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);background:rgb(15 15 16 / .6);padding:8px 14px;border-radius:999px}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--mute)}
+.live.on i{background:var(--hot);box-shadow:0 0 14px var(--hot)}
+.mega{font:400 clamp(64px,13vw,190px)/.86 var(--display);text-transform:uppercase;letter-spacing:-.005em;margin:20px 0 22px}
+.mega .line{display:block;overflow:hidden}
+.mega .line span{display:inline-block}
+.mega em{font-style:normal;color:var(--hot)}
+.sub{max-width:46ch;color:#d9d5cd;font-size:clamp(17px,1.5vw,19px)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:15px 26px;font:800 14px var(--body);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:0;transition:transform .16s var(--ease),background-color .2s ease}
+.btn:active{transform:scale(.97)}
+.btn.hot{background:var(--hot);color:#140600} .btn.hot:hover{background:var(--hot-2)}
+.btn.line{border:2px solid var(--bone);color:var(--bone);background:none}
+.ticker{border-block:1px solid var(--line);overflow:hidden;padding-block:16px;background:var(--ink-2)}
+.ticker .track{display:flex;gap:48px;width:max-content;animation:tick 26s linear infinite}
+.ticker span{font:400 34px var(--display);text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.ticker span b{color:var(--hot);font-weight:400}
+@keyframes tick{to{transform:translateX(-50%)}}
+section{padding-block:clamp(70px,10vw,130px)}
+.h2{font:400 clamp(44px,7vw,96px)/.9 var(--display);text-transform:uppercase;letter-spacing:.005em}
+.h2 em{font-style:normal;color:var(--hot)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);margin-top:46px}
+.stats div{padding:26px 18px 0 0;display:grid;gap:4px}
+.stats div+div{padding-left:18px;border-left:1px solid var(--line)}
+.stats b{font:400 clamp(44px,5vw,72px)/1 var(--display);color:var(--bone)}
+.stats span{color:var(--mute);font-size:14.5px}
+@media (max-width:820px){.stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:26px}.stats div:nth-child(3){padding-left:0;border-left:0}}
+.reel{overflow:hidden}
+.strip{display:flex;gap:18px;width:max-content;will-change:transform;padding-inline:clamp(16px,4vw,40px)}
+.strip figure{width:min(520px,80vw);aspect-ratio:4/3;border-radius:18px;overflow:hidden;position:relative;flex:none}
+.strip img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25) contrast(1.05)}
+.strip figcaption{position:absolute;left:16px;bottom:14px;font:400 30px var(--display);text-transform:uppercase;text-shadow:0 2px 20px rgb(0 0 0 / .7)}
+@media (max-width:820px){.reel{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.reel::-webkit-scrollbar{display:none}.strip figure{scroll-snap-align:center}}
+.programs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px}
+.p{background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:26px;display:grid;gap:12px;align-content:start;transition:border-color .25s ease,transform .3s var(--ease)}
+@media (hover:hover){.p:hover{border-color:var(--hot);transform:translateY(-6px)}}
+.p h3{font:400 34px/1 var(--display);text-transform:uppercase}
+.p p{color:var(--mute);font-size:15.5px}
+.p .n{font:800 12px var(--body);letter-spacing:.14em;color:var(--hot)}
+@media (max-width:900px){.programs{grid-template-columns:1fr}}
+.clock{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,60px);align-items:center}
+@media (max-width:900px){.clock{grid-template-columns:1fr}}
+.dial{position:relative;aspect-ratio:1;max-width:440px;width:100%;justify-self:center}
+.dial svg{width:100%;height:100%}
+.dial .lbl{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.dial .lbl b{font:400 clamp(40px,6vw,64px)/1 var(--display);display:block}
+.dial .lbl span{color:var(--mute);font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.shifts{display:grid;gap:14px;margin-top:26px}
+.shift{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink-2);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.shift b{font:400 30px var(--display)}
+.shift span{color:var(--mute)}
+.shift .now{color:var(--hot);font:800 12px var(--body);letter-spacing:.14em}
+.week{margin-top:18px;color:var(--mute);font-size:14.5px}
+.join{background:var(--hot);color:#140600;border-radius:32px;padding:clamp(30px,6vw,70px);display:grid;gap:22px;position:relative;overflow:hidden}
+.join .h2{color:#140600;max-width:14ch}
+.join p{max-width:50ch;font-size:18px}
+.join .btn.dark{background:#140600;color:var(--hot)}
+.join .btn.line{border-color:#140600;color:#140600}
+.addr{font:700 18px var(--body)}
+footer{padding:40px 0 48px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+html.js .rv{opacity:0;transform:translateY(30px)}
+@media (prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none}.ticker .track{animation:none}html{scroll-behavior:auto}}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#top" data-site="shortName">IRONMONK</a><a class="cta" href="#join">Join now</a></div></nav>
+
+<header class="hero" id="top">
+  <div class="bg"><img src="img/p3.webp" alt="An athlete training with cables in warm light" id="heroImg" width="960" height="640" fetchpriority="high"></div>
+  <div class="wrap">
+    <span class="live" id="live"><i></i><span id="liveText">Checking</span></span>
+    <h1 class="mega"><span class="line"><span>Train at 5 AM.</span></span><span class="line"><span>Or <em>9 PM.</em></span></span></h1>
+    <p class="sub rv">Two floors of serious training, open early mornings and late evenings, so your workout fits around your work.</p>
+    <div class="btns rv"><a class="btn hot" href="#join">Start your membership</a><a class="btn line" href="#hours">See timings</a></div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span><span data-site="ratingScore">4.8</span> <b>★</b> on Google</span><span><b>/</b> Open 7 days</span><span><b>/</b> 2 floors</span><span><b>/</b> <span data-site="area">MVP Colony, Visakhapatnam</span></span><span><b>/</b> UPI and cards</span>
+  <span><span data-site="ratingScore">4.8</span> <b>★</b> on Google</span><span><b>/</b> Open 7 days</span><span><b>/</b> 2 floors</span><span><b>/</b> <span data-site="area">MVP Colony, Visakhapatnam</span></span><span><b>/</b> UPI and cards</span>
+</div></div>
+
+<section><div class="wrap">
+  <h2 class="h2 rv">The numbers <em>don't skip leg day.</em></h2>
+  <div class="stats">
+    <div class="rv"><b class="cnt" data-site="ratingScore">4.8</b><span>Google rating</span></div>
+    <div class="rv"><b class="cnt" data-site="ratingCount">164</b><span>member reviews</span></div>
+    <div class="rv"><b class="cnt" id="weekHours">78</b><span>hours open every week</span></div>
+    <div class="rv"><b>7</b><span>days a week, holidays included</span></div>
+  </div>
+</div></section>
+
+<div class="reel" id="reel"><div class="strip" id="strip">
+  <figure><img src="img/p0.webp" alt="Rows of dumbbells on a rack" width="960" height="639" loading="lazy"><figcaption>Free weights</figcaption></figure>
+  <figure><img src="img/p2.webp" alt="A bright gym floor with machines" width="960" height="640" loading="lazy"><figcaption>Machines</figcaption></figure>
+  <figure><img src="img/p4.webp" alt="Battle rope training" width="960" height="641" loading="lazy"><figcaption>Conditioning</figcaption></figure>
+  <figure><img src="img/p1.webp" alt="A loaded barbell plate close up" width="960" height="640" loading="lazy"><figcaption>Strength</figcaption></figure>
+</div></div>
+
+<section><div class="wrap">
+  <h2 class="h2 rv">Pick your <em>path</em></h2>
+  <div class="programs">
+    <div class="p rv"><span class="n">01</span><h3>Strength</h3><p>Free weights and machines with a plan that adds a little every week.</p></div>
+    <div class="p rv"><span class="n">02</span><h3>Fat loss</h3><p>Cardio, conditioning and coaching on what you eat, tracked month by month.</p></div>
+    <div class="p rv"><span class="n">03</span><h3>Personal training</h3><p>One-on-one sessions for beginners, athletes and anyone coming back from a break.</p></div>
+  </div>
+</div></section>
+
+<section id="hours" style="padding-top:0"><div class="wrap clock">
+  <div>
+    <h2 class="h2 rv">Today's <em>sessions.</em></h2>
+    <div class="shifts" id="shifts"></div>
+    <p class="week rv" id="week"></p>
+  </div>
+  <div class="dial rv" role="img" aria-label="24-hour clock showing today's open hours">
+    <svg viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#2e2e32" stroke-width="16"/>
+      <g id="arcs"></g>
+      <line id="hand" x1="100" y1="34" x2="100" y2="4" stroke="#f2efe9" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div class="lbl"><div><b id="dialTime">--:--</b><span>Local time</span></div></div>
+  </div>
+</div></section>
+
+<section id="join" style="padding-top:0"><div class="wrap">
+  <div class="join rv">
+    <h2 class="h2">Your first week starts here</h2>
+    <p>Monthly, quarterly and yearly memberships. Message us and we'll send today's prices and book your first visit.</p>
+    <p class="addr" data-site="address" data-join=", ">2nd and 3rd Floors, Sagar Towers, Sector 6, MVP Colony, Visakhapatnam 530017</p>
+    <div class="btns"><a class="btn dark" data-wa href="#">Message on WhatsApp</a><a class="btn line" data-tel href="#">Call <span data-site="phoneDisplay">+91 98480 54321</span></a><a class="btn line" data-maps href="#">Directions</a></div>
+  </div>
+</div></section>
+<footer><div class="wrap"><span>&copy; <span data-year>2026</span> <span data-site="name">Ironmonk Strength Club</span></span><a data-email href="#" data-site="email">train@ironmonk.in</a></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+/* SITEKIT:BEGIN  Template engine. You do not need to edit anything in this block. */
+(function () {
+  var S = window.SITE || {};
+  var DAYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+  var NAMES = { sun: "Sunday", mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday" };
+  var ORDER = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function toMin(t) { var p = String(t).split(":"); return (+p[0]) * 60 + (+(p[1] || 0)); }
+  function fmt(m) { m = ((m % 1440) + 1440) % 1440; var h = Math.floor(m / 60), mm = m % 60; return ((h + 11) % 12 + 1) + (mm ? ":" + String(mm).padStart(2, "0") : "") + " " + (h >= 12 ? "PM" : "AM"); }
+  function slots(d) { return ((S.hours || {})[d] || []).map(function (s) { return [toMin(s[0]), toMin(s[1])]; }); }
+  function now() {
+    var p = new Intl.DateTimeFormat("en-US", { timeZone: S.timezone || "Asia/Kolkata", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+    var g = function (t) { return p.find(function (x) { return x.type === t; }).value; };
+    var key = g("weekday").slice(0, 3).toLowerCase();
+    return { day: DAYS.indexOf(key), key: key, min: (+g("hour") % 24) * 60 + (+g("minute")) };
+  }
+  function status() {
+    var n = now(), t = slots(n.key);
+    var cur = t.find(function (s) { return n.min >= s[0] && n.min < s[1]; });
+    if (cur) return { open: true, until: cur[1], text: "Open now · until " + fmt(cur[1]) };
+    var later = t.find(function (s) { return n.min < s[0]; });
+    if (later) return { open: false, next: later[0], text: "Closed now · opens " + fmt(later[0]) + " today" };
+    for (var k = 1; k <= 7; k++) {
+      var d = DAYS[(n.day + k) % 7], ts = slots(d);
+      if (ts.length) return { open: false, next: ts[0][0], text: "Closed now · opens " + (k === 1 ? "tomorrow" : NAMES[d]) + " " + fmt(ts[0][0]) };
+    }
+    return { open: false, text: "Closed" };
+  }
+  function dayLabel(d, sep) { var t = slots(d); return t.length ? t.map(function (s) { return fmt(s[0]) + " - " + fmt(s[1]); }).join(sep || ", ") : "Closed"; }
+
+  /* Small toast used in demo mode and for form messages */
+  var toastEl, toastTimer;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.setAttribute("role", "status");
+      toastEl.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;max-width:min(560px,calc(100% - 32px));width:max-content;background:#161616;color:#f5f5f3;font:500 14px/1.5 system-ui,sans-serif;padding:12px 16px;border-radius:12px;box-shadow:0 18px 40px -16px rgba(0,0,0,.5);opacity:0;transition:opacity .2s ease;pointer-events:none;text-align:center";
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg; toastEl.style.opacity = "1";
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { toastEl.style.opacity = "0"; }, 5200);
+  }
+  function waLink(msg) { return "https://wa.me/" + String(S.whatsapp || "").replace(/\D/g, "") + "?text=" + encodeURIComponent(msg || S.whatsappMessage || ""); }
+  function openWhatsApp(msg) {
+    if (S.demoMode) { toast("Demo mode: on the live site this opens WhatsApp to " + S.phoneDisplay + " with: “" + (msg || S.whatsappMessage) + "”"); return; }
+    window.open(waLink(msg), "_blank", "noopener");
+  }
+
+  /* Fill in text and links from SITE */
+  document.querySelectorAll("[data-site]").forEach(function (el) {
+    var v = S[el.getAttribute("data-site")]; if (v == null) return;
+    el.innerHTML = Array.isArray(v) ? v.map(esc).join(el.getAttribute("data-join") || "<br>") : esc(v);
+  });
+  document.querySelectorAll("[data-tel]").forEach(function (el) {
+    el.href = "tel:" + S.phone;
+    el.addEventListener("click", function (e) { if (S.demoMode) { e.preventDefault(); toast("Demo mode: on the live site this calls " + S.phoneDisplay + "."); } });
+  });
+  document.querySelectorAll("[data-wa]").forEach(function (el) {
+    var msg = el.getAttribute("data-wa") || S.whatsappMessage;
+    if (el.tagName === "A") { el.href = waLink(msg); el.target = "_blank"; el.rel = "noopener"; }
+    el.addEventListener("click", function (e) { e.preventDefault(); openWhatsApp(msg); });
+  });
+  document.querySelectorAll("[data-maps]").forEach(function (el) { el.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(S.mapsQuery || S.name); el.target = "_blank"; el.rel = "noopener"; });
+  document.querySelectorAll("[data-email]").forEach(function (el) { el.href = "mailto:" + S.email + (el.getAttribute("data-email") ? "?subject=" + encodeURIComponent(el.getAttribute("data-email")) : ""); });
+  document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+
+  window.SiteKit = { S: S, DAYS: DAYS, NAMES: NAMES, ORDER: ORDER, fmt: fmt, toMin: toMin, slots: slots, now: now, status: status, dayLabel: dayLabel, toast: toast, waLink: waLink, openWhatsApp: openWhatsApp, esc: esc };
+})();
+/* SITEKIT:END */
+</script>
+<script>
+const K = window.SiteKit;
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const NS = "http://www.w3.org/2000/svg";
+function arc(a0, a1){ const r = 86, p = a => [100 + r*Math.sin(a), 100 - r*Math.cos(a)], [x0,y0] = p(a0), [x1,y1] = p(a1); return `M${x0} ${y0} A${r} ${r} 0 ${a1-a0>Math.PI?1:0} 1 ${x1} ${y1}`; }
+const ang = m => m/1440*2*Math.PI;
+document.getElementById("weekHours").textContent = Math.round(K.ORDER.reduce((t, d) => t + K.slots(d).reduce((s, [a,b]) => s + (b-a), 0), 0) / 60);
+function tick(){
+  const n = K.now(), st = K.status(), today = K.slots(n.key);
+  document.getElementById("live").classList.toggle("on", st.open);
+  document.getElementById("liveText").textContent = st.text;
+  document.getElementById("shifts").innerHTML = today.length ? today.map(([a,b], i) =>
+    `<div class="shift"><div><b>${K.fmt(a)} - ${K.fmt(b)}</b><br><span>${a < 720 ? "Morning" : a < 1020 ? "Afternoon" : "Evening"} session</span></div>${n.min>=a && n.min<b ? '<span class="now">OPEN NOW</span>' : ""}</div>`).join("")
+    : `<div class="shift"><div><b>Closed today</b><br><span>${st.text}</span></div></div>`;
+  const g = document.getElementById("arcs"); g.innerHTML = "";
+  today.forEach(([a,b]) => { const p = document.createElementNS(NS, "path"); p.setAttribute("d", arc(ang(a), ang(b))); p.setAttribute("fill","none"); p.setAttribute("stroke", getComputedStyle(document.documentElement).getPropertyValue("--hot").trim() || "#ff5a1f"); p.setAttribute("stroke-width","16"); p.setAttribute("stroke-linecap","round"); g.appendChild(p); });
+  document.getElementById("hand").setAttribute("transform", `rotate(${n.min/1440*360} 100 100)`);
+  document.getElementById("dialTime").textContent = K.fmt(n.min);
+  const groups = []; K.ORDER.forEach(d => { const l = K.dayLabel(d); const last = groups[groups.length-1]; if (last && last.l === l) last.d.push(d); else groups.push({ l, d:[d] }); });
+  document.getElementById("week").textContent = "Full week: " + groups.map(x => (x.d.length > 1 ? K.NAMES[x.d[0]].slice(0,3) + " to " + K.NAMES[x.d[x.d.length-1]].slice(0,3) : K.NAMES[x.d[0]].slice(0,3)) + " " + x.l).join(". ") + ".";
+}
+tick(); setInterval(tick, 30000);
+
+if (!reduce && window.gsap) {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(".mega .line span", { yPercent:110, duration:1.2, stagger:.12, ease:"expo.out", delay:.15 });
+  gsap.utils.toArray(".rv").forEach(el => gsap.to(el, { opacity:1, y:0, duration:1, ease:"expo.out", scrollTrigger:{ trigger:el, start:"top 90%", once:true } }));
+  gsap.to("#heroImg", { yPercent:-14, ease:"none", scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:true } });
+  gsap.matchMedia().add("(min-width: 821px)", () => {
+    const strip = document.getElementById("strip");
+    gsap.to(strip, { x:() => -Math.max(0, strip.scrollWidth - innerWidth), ease:"none", scrollTrigger:{ trigger:"#reel", start:"top 80%", end:"bottom top", scrub:true, invalidateOnRefresh:true } });
+  });
+  document.querySelectorAll(".cnt").forEach(el => { const raw = el.textContent.trim(), end = parseFloat(raw); if (isNaN(end)) return; const dec = raw.includes(".") ? 1 : 0, o = { v:0 };
+    gsap.to(o, { v:end, duration:1.6, ease:"power3.out", scrollTrigger:{ trigger:el, start:"top 90%", once:true }, onUpdate:() => el.textContent = o.v.toFixed(dec) }); });
+} else document.documentElement.classList.remove("js");
+</script>
+<style>.kits-bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:center;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:#111214;color:#f4f4f5;font:500 13.5px/1.4 system-ui,sans-serif;text-align:center}.kits-bar a{color:#9fb0ff;font-weight:600}body{padding-bottom:64px}</style>
+<div class="kits-bar" role="note"><span>Template preview. The business, reviews and contact details are fictional.</span><a href="../../#templates">Get this template pack</a></div>
+</body>
+</html>
