@@ -5,3 +5,4 @@ products/
 __pycache__/
 *.pyc
 .qa/
+gumroad-assets/
